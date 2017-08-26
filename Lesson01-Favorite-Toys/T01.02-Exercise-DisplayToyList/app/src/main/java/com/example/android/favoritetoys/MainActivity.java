@@ -21,11 +21,18 @@ import android.support.v7.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     // TODO (1) Declare a TextView variable called mToysListTextView
-
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        textView = (TextView) findViewById(R.id.layout_text_view);
+        String[] toyName = ToyBox.getToyNames();
+        int i=0;
+        while(i<toyName.length){
+            textView.append(toyName[i] + "\n");
+            i++;
+        }
 
         // TODO (3) Use findViewById to get a reference to the TextView from the layout
 
